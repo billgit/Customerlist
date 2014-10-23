@@ -1,1 +1,1 @@
-Contact list using Angularjs & small JSON object.  
+Angularjs Contact List 
