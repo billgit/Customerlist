@@ -1,0 +1,1 @@
+Just a test project using Angularjs -- and learning how to use Git more effectively.
