@@ -1,2 +1,1 @@
-A small contact list using Angularjs.  
-Also getting more familiar with GIT.
+Contact list using Angularjs & small JSON object.  
