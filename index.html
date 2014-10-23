@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Contact List</title>
+
+<script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<h1 style="text-align:center;">Contact List</h1>
+
+<div ng-app="" ng-controller="ContactController">
+    <form class="well well-sm">
+	<div style="float:left; width:166px;"><label>Name:</label><br/>
+    		<input type="text" name="name" ng-model="newcontact.name"/>
+	</div>
+ 	<div style="float:left; width:166px;"><label>Email:</label><br/>
+ 		<input type="text" name="email" ng-model="newcontact.email"/>
+	</div>
+	<div style="float:left;"><label>Tel #:</label><br/> 
+ 		<input type="text" name="phone" ng-model="newcontact.phone"/>
+	</div>
+
+	<div style="clear:both; padding-top:16px;"><label>Address:</label><br/>
+ 		<input placeholder="Street" type="text" name="street" ng-model="newcontact.street"/> &nbsp;
+		<input placeholder="City" type="text" name="city" ng-model="newcontact.city"/> &nbsp;
+		<input placeholder="State" type="text" name="state" ng-model="newcontact.state" style="width:90px;"/> &nbsp;
+		<input placeholder="Zip" type="text" name="zip" ng-model="newcontact.zip" style="width:50px;"/>
+		<input type="button" value="Add" ng-click="saveContact()" class="btn btn-primary" style="float:right; padding:2px 12px;"/>
+	</div>
+  	<input type="hidden" ng-model="newcontact.id" />
+    </form>
+
+<!-- Display contacts -->
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading" style="font-weight:bold;">Customers</div>
+
+<table style="width:100%;">
+<tr ng-repeat="contact in contacts" style="border-bottom:1px #66a solid;">
+<td style="width:30%; padding:4px 0 6px 0;">
+	<span style="margin-left:24px;">{{ contact.name }}</span><br/>
+	<span style="margin-left:24px;">{{ contact.street }}</span><br/>
+	<span style="margin-left:24px;">{{ contact.city }}, {{ contact.state }}&nbsp; &nbsp;{{ contact.zip }}</span>
+</td>
+<td style="width:20%; padding:4px 0 6px 0;" valign="top">
+	{{ contact.email }}
+</td>
+<td style="width:20%; padding:4px 0 6px 0;" valign="top">
+	{{ contact.phone }}
+</td>
+<td style="float:right; margin-right:24px; padding:4px 0 6px 0;"><a href="#" ng-click="edit(contact.id)">Update</a> | 
+<a href="#" ng-click="delete(contact.id)">Delete</a>
+</td>
+</tr></table>
+</div>
+</div>
+<script type="text/javascript" src="app1.js"></script>
+</body>
+
+</html>
